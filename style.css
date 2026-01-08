@@ -1,32 +1,36 @@
+/* General Body */
 body {
     font-family: "Segoe UI", sans-serif;
     margin: 0;
-    background-color: #f2f2f2;
-    color: #333;
+    background-color: #121212; /* dark background */
+    color: #e0e0e0; /* light text */
 }
 
+/* Header */
 header {
-    background: linear-gradient(135deg, #1e1e1e, #333);
-    color: white;
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+    color: #ffffff;
     padding: 50px;
     text-align: center;
 }
 
+/* Sections */
 section {
-    background: white;
+    background: #1f1f1f; /* dark card background */
     margin: 30px auto;
     padding: 25px;
     max-width: 900px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* stronger shadow for dark mode */
 }
 
+/* Projects */
 .project {
     margin-bottom: 25px;
 }
 
 .project a {
-    color: #0066cc;
+    color: #4da6ff; /* bright blue for links */
     text-decoration: none;
     font-weight: bold;
 }
@@ -35,18 +39,25 @@ section {
     text-decoration: underline;
 }
 
+/* Buttons */
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background: #222;
-    color: white;
+    background: #444; /* dark button */
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    transition: background 0.3s;
 }
 
+.btn:hover {
+    background: #666; /* lighter on hover */
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background: #222;
-    color: white;
+    background: #1a1a1a;
+    color: #ccc;
 }
