@@ -3,86 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <title>Muhammad Reyan Shafqat | Engineering Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        header h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .accordion-section {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .accordion-header {
+            background: #34495e;
+            color: white;
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: #2c3e50;
+        }
+
+        .accordion-header h2 {
+            font-size: 1.3rem;
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-content.active {
+            max-height: 2000px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .accordion-inner {
+            padding: 1.5rem;
+        }
+
+        .project {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+
+        .project h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .project p {
+            margin-bottom: 0.5rem;
+        }
+
+        .project a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-position: inside;
+            margin-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
-
 <header>
     <h1>Muhammad Reyan Shafqat</h1>
     <p>Undergraduate Student | Computer Science | Cybersecurity</p>
 </header>
 
-<section>
-    <h2>About Me</h2>
-    <p>
-        I am a undergraduate student with strong interests in Computer Science, Electrical Engineering.
-        I enjoy building software systems, simulations, and automation-based
-        projects that combine programming with engineering concepts.
-    </p>
-</section>
-
-<section>
-    <h2>Projects</h2>
-
-    <div class="project">
-        <h3>Medical Care Website</h3>
-        <p>
-            A Python-based Website that helps Users to 
-            track appointments, medications, and health notes. Helping users 
-            manage their medical records easily and efficiently.
-        </p>
-        <p><strong>Technologies:</strong> Python, OOP, File Handling</p>
-        <a href="https://github.com/Basakrobhai/Medical-Care-Website">View Code</a>
+<div class="container">
+    <!-- About Me Section -->
+    <div class="accordion-section">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h2>About Me</h2>
+            <span class="accordion-icon">▼</span>
+        </div>
+        <div class="accordion-content">
+            <div class="accordion-inner">
+                <p>
+                    I am a undergraduate student with strong interests in Computer Science, Electrical Engineering.
+                    I enjoy building software systems, simulations, and automation-based
+                    projects that combine programming with engineering concepts.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="project">
-        <h3>Inventory & Takeaway Management System</h3>
-        <p>
-            A Java-based application designed to manage orders, pricing, and customer data.
-            Built using object-oriented programming principles.
-        </p>
-        <p><strong>Technologies:</strong> Java, OOP, Data Structures</p>
-        <a href="https://github.com/Basakrobhai/Food-Delivery">View Code</a>
+    <!-- Projects Section -->
+    <div class="accordion-section">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h2>Projects</h2>
+            <span class="accordion-icon">▼</span>
+        </div>
+        <div class="accordion-content">
+            <div class="accordion-inner">
+                <div class="project">
+                    <h3>Medical Care Website</h3>
+                    <p>
+                        A Python-based Website that helps Users to 
+                        track appointments, medications, and health notes. Helping users 
+                        manage their medical records easily and efficiently.
+                    </p>
+                    <p><strong>Technologies:</strong> Python, OOP, File Handling</p>
+                    <a href="https://github.com/Basakrobhai/Medical-Care-Website" target="_blank">View Code</a>
+                </div>
+                <div class="project">
+                    <h3>Inventory & Takeaway Management System</h3>
+                    <p>
+                        A Java-based application designed to manage orders, pricing, and customer data.
+                        Built using object-oriented programming principles.
+                    </p>
+                    <p><strong>Technologies:</strong> Java, OOP, Data Structures</p>
+                    <a href="https://github.com/Basakrobhai/Food-Delivery" target="_blank">View Code</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-</section>
+    <!-- Skills Section -->
+    <div class="accordion-section">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h2>Skills</h2>
+            <span class="accordion-icon">▼</span>
+        </div>
+        <div class="accordion-content">
+            <div class="accordion-inner">
+                <ul>
+                    <li>Programming: Python, Java, Linux, Assembly (MARIE)</li>
+                    <li>Engineering Concepts: Circuit Analysis, Logic Gates</li>
+                    <li>Tools: Git, GitHub, Circuit Simulators, Pycharm, VS Studio & Visual Studio</li>
+                    <li>Data Analysis & Problem Solving</li>
+                    <li>Critical thinking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-<section>
-    <h2>Skills</h2>
-    <ul>
-        <li>Programming: Python, Java, Linux, Assembly (MARIE)</li>
-        <li>Engineering Concepts: Circuit Analysis, Logic Gates</li>
-        <li>Tools: Git, GitHub, Circuit Simulators, Pycharm, VS Studio & Visual Studio</li>
-        <li>Data Analysis & Problem Solving</li>
-        <Li>Critical thinking</Li>
-    </ul>
-</section>
+    <!-- Certifications Section -->
+    <div class="accordion-section">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h2>Certifications & Learning</h2>
+            <span class="accordion-icon">▼</span>
+        </div>
+        <div class="accordion-content">
+            <div class="accordion-inner">
+                <ul>
+                    <li>Python Programming</li>
+                    <li>Electrical Engineering Fundamentals (MIT OpenCourseWare)</li>
+                    <li>Foundations of Ethical Hacking (Cybersecurity)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-<section>
-    <h2>Certifications & Learning</h2>
-    <ul>
-        <li>Python Programming</li>
-        <li>Electrical Engineering Fundamentals (MIT OpenCourseWare)</li>
-        <li>Foundations of Ethical Hacking (Cybersecurity)</li>
-    </ul>
-</section>
+    <!-- Resume Section -->
+    <div class="accordion-section">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h2>Resume/CV</h2>
+            <span class="accordion-icon">▼</span>
+        </div>
+        <div class="accordion-content">
+            <div class="accordion-inner">
+                <a href="resume.pdf" class="btn" target="_blank">Download Resume</a>
+            </div>
+        </div>
+    </div>
 
-<section>
-    <h2>Resume/CV</h2>
-    <a href="resume.pdf" class="btn">Download Resume</a>
-</section>
-
-<section>
-    <h2>Contact</h2>
-    <p>Email: reyanshafqat599@gmail.com</p>
-    <p>GitHub: github.com/Basakrobhai</p>
-    <p>LinkedIn: https://www.linkedin.com/in/muhammad-reyan-shafqat/</p>
-    <p>Number: (+974) 5566 2598</p>
-</section>
+    <!-- Contact Section -->
+    <div class="accordion-section">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h2>Contact</h2>
+            <span class="accordion-icon">▼</span>
+        </div>
+        <div class="accordion-content">
+            <div class="accordion-inner">
+                <p><strong>Email:</strong> reyanshafqat599@gmail.com</p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/Basakrobhai" target="_blank">github.com/Basakrobhai</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/muhammad-reyan-shafqat/" target="_blank">linkedin.com/in/muhammad-reyan-shafqat</a></p>
+                <p><strong>Number:</strong> (+974) 5566 2598</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <footer>
     <p>© Muhammad Reyan Shafqat</p>
 </footer>
 
+<script>
+function toggleAccordion(header) {
+    // Get the content div
+    const content = header.nextElementSibling;
+    
+    // Toggle active class on header and content
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+</script>
 </body>
 </html>
