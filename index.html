@@ -3,39 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Reyan Shafqat | Engineering Portfolo</title>
+  <title>Muhammad Reyan Shafqat | Engineering Portfolio</title>
   <meta name="description" content="Muhammad Reyan Shafqat | Computer Science & Cybersecurity portfolio. Projects in Python and Java." />
+  <meta name="theme-color" content="#0d1117" />
 
-  <!-- Use external CSS -->
+  <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header>
-    <h1>Muhammad Reyan Shafqat</h1>
-    <p>Undergraduate Student | Computer Science | Cybersecurity</p>
+    <div class="header-inner">
+      <h1>Muhammad Reyan Shafqat</h1>
+      <p>Undergraduate Student | Computer Science | Cybersecurity</p>
 
-    <div class="header-actions">
-      <a class="btn btn-primary" href="#projects">View Projects</a>
-      <a class="btn btn-secondary" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
-      <a class="btn btn-ghost" href="#contact">Contact</a>
+      <div class="header-actions">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-secondary" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+      </div>
     </div>
   </header>
 
+  <!-- Sticky nav -->
+  <nav class="topnav" aria-label="Primary">
+    <a href="#about" class="navlink">About</a>
+    <a href="#projects" class="navlink">Projects</a>
+    <a href="#skills" class="navlink">Skills</a>
+    <a href="#certs" class="navlink">Learning</a>
+    <a href="#contact" class="navlink">Contact</a>
+  </nav>
+
   <main class="container">
-    <!-- About Me -->
+
+    <!-- Featured -->
+    <section class="featured" aria-label="Featured project">
+      <div class="featured-card">
+        <div>
+          <p class="kicker">Featured</p>
+          <h2 class="featured-title">Medical Care Website</h2>
+          <p class="muted">
+            A medical tracker that helps users manage appointments, medications, and health notes using
+            clean OOP structure and persistent storage.
+          </p>
+
+          <div class="meta">
+            <span class="pill">Python</span>
+            <span class="pill">OOP</span>
+            <span class="pill">Persistence</span>
+          </div>
+
+          <div class="featured-actions">
+            <a class="btn btn-primary" href="#projects">See Details</a>
+            <a class="btn btn-secondary" href="https://github.com/Basakrobhai/Medical-Care-Website" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <div class="featured-side">
+          <div class="stat">
+            <div class="stat-num">2+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">CS</div>
+            <div class="stat-label">Cybersecurity Focus</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">OOP</div>
+            <div class="stat-label">Strong Foundations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
     <section class="accordion-section" id="about">
-      <button class="accordion-header" type="button" aria-expanded="true">
+      <button class="accordion-header active" type="button" aria-expanded="true">
         <h2>About Me</h2>
         <span class="accordion-icon" aria-hidden="true">▼</span>
       </button>
-
       <div class="accordion-content active">
         <div class="accordion-inner">
           <p>
             I am an undergraduate student with strong interests in Computer Science and Electrical Engineering.
-            I enjoy building software systems, simulations, and automation projects that combine programming
-            with engineering concepts.
+            I enjoy building software systems, simulations, and automation projects that combine programming with
+            engineering concepts.
+          </p>
+          <p class="muted small" style="margin-top:.75rem;">
+            Current interests: cybersecurity fundamentals, secure coding, and systems building.
           </p>
         </div>
       </div>
@@ -47,9 +102,9 @@
         <h2>Projects</h2>
         <span class="accordion-icon" aria-hidden="true">▼</span>
       </button>
-
       <div class="accordion-content">
         <div class="accordion-inner">
+
           <article class="project">
             <div class="project-top">
               <h3>Medical Care Website</h3>
@@ -57,14 +112,19 @@
             </div>
 
             <p class="muted">
-              A Python-based website that helps users track appointments, medications, and health notes to manage
-              medical records efficiently.
+              Helps users track appointments, medications, and health notes for better personal record management.
             </p>
+
+            <div class="meta">
+              <span class="pill">Role: Developer</span>
+              <span class="pill">Type: Web App</span>
+              <span class="pill">Focus: Structure + Storage</span>
+            </div>
 
             <ul class="highlights">
               <li>Organizes user health info (appointments, notes, reminders)</li>
-              <li>Focus on clean structure using OOP principles</li>
-              <li>File-based persistence for stored records</li>
+              <li>Uses OOP design for clear structure</li>
+              <li>Stores records using file-based persistence</li>
             </ul>
 
             <p><strong>Technologies:</strong> Python, OOP, File Handling</p>
@@ -84,8 +144,14 @@
               A Java application designed to manage orders, pricing, and customer data using object-oriented design.
             </p>
 
+            <div class="meta">
+              <span class="pill">Role: Developer</span>
+              <span class="pill">Type: Desktop/Console App</span>
+              <span class="pill">Focus: OOP + Data Structures</span>
+            </div>
+
             <ul class="highlights">
-              <li>Order management flow with structured classes</li>
+              <li>Order flow management with structured classes</li>
               <li>Pricing logic and customer data handling</li>
               <li>Practice with core data structures</li>
             </ul>
@@ -96,6 +162,7 @@
               <a href="https://github.com/Basakrobhai/Food-Delivery" target="_blank" rel="noopener">View Code</a>
             </div>
           </article>
+
         </div>
       </div>
     </section>
@@ -106,14 +173,13 @@
         <h2>Skills</h2>
         <span class="accordion-icon" aria-hidden="true">▼</span>
       </button>
-
       <div class="accordion-content">
         <div class="accordion-inner">
           <ul class="list">
             <li><strong>Programming:</strong> Python, Java, Linux, Assembly (MARIE)</li>
             <li><strong>Engineering Concepts:</strong> Circuit Analysis, Logic Gates</li>
             <li><strong>Tools:</strong> Git, GitHub, Circuit Simulators, PyCharm, VS Code, Visual Studio</li>
-            <li><strong>Strengths:</strong> Data Analysis, Problem Solving, Critical Thinking</li>
+            <li><strong>Strengths:</strong> Problem Solving, Critical Thinking, Documentation</li>
           </ul>
         </div>
       </div>
@@ -125,7 +191,6 @@
         <h2>Certifications & Learning</h2>
         <span class="accordion-icon" aria-hidden="true">▼</span>
       </button>
-
       <div class="accordion-content">
         <div class="accordion-inner">
           <ul class="list">
@@ -143,12 +208,11 @@
         <h2>Resume/CV</h2>
         <span class="accordion-icon" aria-hidden="true">▼</span>
       </button>
-
       <div class="accordion-content">
         <div class="accordion-inner">
           <a href="resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">Download Resume</a>
-          <p class="muted small" style="margin-top: 0.75rem;">
-            Tip: keep your resume to 1 page, and make sure your GitHub links match your best projects.
+          <p class="muted small" style="margin-top:.75rem;">
+            Tip: keep it 1 page and link your best projects on GitHub.
           </p>
         </div>
       </div>
@@ -160,16 +224,52 @@
         <h2>Contact</h2>
         <span class="accordion-icon" aria-hidden="true">▼</span>
       </button>
-
       <div class="accordion-content">
         <div class="accordion-inner">
-          <p><strong>Email:</strong> reyanshafqat599@gmail.com</p>
-          <p><strong>GitHub:</strong> <a href="https://github.com/Basakrobhai" target="_blank" rel="noopener">github.com/Basakrobhai</a></p>
-          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/muhammad-reyan-shafqat/" target="_blank" rel="noopener">linkedin.com/in/muhammad-reyan-shafqat</a></p>
-          <p class="muted small">Optional: consider removing phone number from public pages to reduce spam calls.</p>
+          <div class="contact-grid">
+            <div class="contact-left">
+              <p><strong>Email:</strong> <span class="mono" id="emailText">reyanshafqat599@gmail.com</span></p>
+              <button class="btn btn-ghost copy-btn" type="button" data-copy="reyanshafqat599@gmail.com">Copy Email</button>
+
+              <p style="margin-top:.9rem;"><strong>GitHub:</strong>
+                <a href="https://github.com/Basakrobhai" target="_blank" rel="noopener">github.com/Basakrobhai</a>
+              </p>
+              <p><strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/muhammad-reyan-shafqat/" target="_blank" rel="noopener">
+                  linkedin.com/in/muhammad-reyan-shafqat
+                </a>
+              </p>
+              <p class="muted small" style="margin-top:.75rem;">
+                Optional safety tip: avoid posting phone numbers publicly to reduce spam calls.
+              </p>
+            </div>
+
+            <div class="contact-right">
+              <form class="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
+                <label>
+                  <span>Name</span>
+                  <input name="name" type="text" required />
+                </label>
+
+                <label>
+                  <span>Email</span>
+                  <input name="email" type="email" required />
+                </label>
+
+                <label>
+                  <span>Message</span>
+                  <textarea name="message" rows="5" required></textarea>
+                </label>
+
+                <button class="btn btn-primary" type="submit">Send</button>
+                <p class="muted small">Replace <span class="mono">your_form_id</span> with your Formspree ID (optional).</p>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -187,9 +287,9 @@
 
     headers.forEach((btn) => {
       const content = btn.nextElementSibling;
-
-      // Initialize: open About Me by default (aria-expanded="true" + .active)
       const expanded = btn.getAttribute("aria-expanded") === "true";
+
+      // Init state
       if (expanded) {
         btn.classList.add("active");
         content.classList.add("active");
@@ -206,12 +306,46 @@
       });
     });
 
-    // Recalculate heights on resize (for responsive text wrapping)
+    // Recalc heights on resize
     window.addEventListener("resize", () => {
       headers.forEach((btn) => {
         const content = btn.nextElementSibling;
         const expanded = btn.getAttribute("aria-expanded") === "true";
         setPanelHeight(content, expanded);
+      });
+    });
+
+    // Sticky nav highlight
+    const sections = ["about","projects","skills","certs","contact"]
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+    const navLinks = Array.from(document.querySelectorAll(".navlink"));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + id));
+      });
+    }, { root: null, threshold: 0.35 });
+
+    sections.forEach(sec => observer.observe(sec));
+
+    // Copy email button
+    document.querySelectorAll(".copy-btn").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const text = btn.getAttribute("data-copy");
+        try {
+          await navigator.clipboard.writeText(text);
+          const old = btn.textContent;
+          btn.textContent = "Copied ✅";
+          setTimeout(()=> btn.textContent = old, 1200);
+        } catch {
+          const old = btn.textContent;
+          btn.textContent = "Copy failed";
+          setTimeout(()=> btn.textContent = old, 1200);
+        }
       });
     });
   </script>
