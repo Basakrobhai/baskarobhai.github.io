@@ -312,7 +312,7 @@ a:hover{
   text-decoration: none;
 }
 
-/* Contact layout */
+/* Contact */
 .contact-grid{
   display: grid;
   grid-template-columns: 1fr 1.1fr;
