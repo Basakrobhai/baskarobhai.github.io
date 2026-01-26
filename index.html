@@ -228,7 +228,7 @@
         <div class="accordion-inner">
           <div class="contact-grid">
             <div class="contact-left">
-              <p><strong>Email:</strong> <span class="mono" id="emailText">reyanshafqat599@gmail.com</span></p>
+              <p><strong>Email:</strong> <span class="mono">reyanshafqat599@gmail.com</span></p>
               <button class="btn btn-ghost copy-btn" type="button" data-copy="reyanshafqat599@gmail.com">Copy Email</button>
 
               <p style="margin-top:.9rem;"><strong>GitHub:</strong>
@@ -239,6 +239,7 @@
                   linkedin.com/in/muhammad-reyan-shafqat
                 </a>
               </p>
+
               <p class="muted small" style="margin-top:.75rem;">
                 Optional safety tip: avoid posting phone numbers publicly to reduce spam calls.
               </p>
@@ -277,19 +278,19 @@
   </footer>
 
   <script>
-    // Accessible accordion with smooth dynamic height
+    // Accordion: only one open at a time
     const headers = document.querySelectorAll(".accordion-header");
 
-    function setPanelHeight(content, isOpen) {
+    function setPanelHeight(content, open) {
       const inner = content.querySelector(".accordion-inner");
-      content.style.maxHeight = isOpen ? inner.scrollHeight + "px" : "0px";
+      content.style.maxHeight = open ? inner.scrollHeight + "px" : "0px";
     }
 
+    // Initialize
     headers.forEach((btn) => {
       const content = btn.nextElementSibling;
       const expanded = btn.getAttribute("aria-expanded") === "true";
 
-      // Init state
       if (expanded) {
         btn.classList.add("active");
         content.classList.add("active");
@@ -299,14 +300,28 @@
       }
 
       btn.addEventListener("click", () => {
-        const isOpen = btn.classList.toggle("active");
-        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        content.classList.toggle("active", isOpen);
-        setPanelHeight(content, isOpen);
+        const isCurrentlyOpen = btn.classList.contains("active");
+
+        // Close all
+        headers.forEach((otherBtn) => {
+          const otherContent = otherBtn.nextElementSibling;
+          otherBtn.classList.remove("active");
+          otherBtn.setAttribute("aria-expanded", "false");
+          otherContent.classList.remove("active");
+          setPanelHeight(otherContent, false);
+        });
+
+        // Open clicked if it wasn't open
+        if (!isCurrentlyOpen) {
+          btn.classList.add("active");
+          btn.setAttribute("aria-expanded", "true");
+          content.classList.add("active");
+          setPanelHeight(content, true);
+        }
       });
     });
 
-    // Recalc heights on resize
+    // Recalculate heights on resize
     window.addEventListener("resize", () => {
       headers.forEach((btn) => {
         const content = btn.nextElementSibling;
@@ -328,11 +343,11 @@
         const id = entry.target.id;
         navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + id));
       });
-    }, { root: null, threshold: 0.35 });
+    }, { threshold: 0.35 });
 
     sections.forEach(sec => observer.observe(sec));
 
-    // Copy email button
+    // Copy email
     document.querySelectorAll(".copy-btn").forEach(btn => {
       btn.addEventListener("click", async () => {
         const text = btn.getAttribute("data-copy");
