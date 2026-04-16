@@ -224,6 +224,14 @@ header p{ color: var(--muted); }
   background: rgba(255,255,255,0.03);
 }
 
+/* Featured project tag */
+.featured-tag{
+  color: #f0b429;
+  border-color: #f0b429;
+  background: rgba(240,180,41,0.08);
+  font-weight: 600;
+}
+
 /* Meta pills */
 .meta{
   display: flex;
