@@ -280,25 +280,8 @@
               </p>
             </div>
 
-            <div class="contact-right">
-              <form class="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
-                <label>
-                  <span>Name</span>
-                  <input name="name" type="text" required />
-                </label>
-
-                <label>
-                  <span>Email</span>
-                  <input name="email" type="email" required />
-                </label>
-
-                <label>
-                  <span>Message</span>
-                  <textarea name="message" rows="5" required></textarea>
-                </label>
-
-                <button class="btn btn-primary" type="submit">Send</button>
-                <p class="muted small">Replace <span class="mono">your_form_id</span> with your Formspree ID (optional).</p>
+          
+                
               </form>
             </div>
           </div>
@@ -389,7 +372,7 @@
         try {
           await navigator.clipboard.writeText(text);
           const old = btn.textContent;
-          btn.textContent = "Copied ✅";
+          btn.textContent = "Copied";
           setTimeout(()=> btn.textContent = old, 1200);
         } catch {
           const old = btn.textContent;
